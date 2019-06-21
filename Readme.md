@@ -5,6 +5,9 @@
 * [Default.aspx.cs](./CS/WebSite/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/WebSite/Default.aspx.vb))
 <!-- default file list end -->
 # How to implement custom grouping logic for ASPxGridView columns
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/e3071/)**
+<!-- run online end -->
 
 
 <p>This sample demonstrates how to use the CustomColumnGroup, CustomColumnSort and CustomGroupDisplayText events to group grid data by values of a specific grid column based on a custom criteria.</p><p><strong>See also:</strong><br />
