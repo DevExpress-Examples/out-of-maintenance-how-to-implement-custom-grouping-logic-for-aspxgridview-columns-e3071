@@ -14,15 +14,15 @@ public partial class _Default : System.Web.UI.Page {
 
     }
 
-    protected void ASPxGridView1_CustomColumnSort(object sender, DevExpress.Web.ASPxGridView.CustomColumnSortEventArgs e){
+    protected void ASPxGridView1_CustomColumnSort(object sender, DevExpress.Web.CustomColumnSortEventArgs e){
         CompareColumnValues(e);
     }
 
-    protected void ASPxGridView1_CustomColumnGroup(object sender, DevExpress.Web.ASPxGridView.CustomColumnSortEventArgs e){
+    protected void ASPxGridView1_CustomColumnGroup(object sender, DevExpress.Web.CustomColumnSortEventArgs e){
         CompareColumnValues(e);
     }
 
-    private void CompareColumnValues(DevExpress.Web.ASPxGridView.CustomColumnSortEventArgs e) {
+    private void CompareColumnValues(DevExpress.Web.CustomColumnSortEventArgs e) {
         if (e.Column.FieldName == "UnitPrice"){
             int res = 0;
 
@@ -38,7 +38,7 @@ public partial class _Default : System.Web.UI.Page {
         }
     }
 
-    protected void ASPxGridView1_CustomGroupDisplayText(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewColumnDisplayTextEventArgs e){
+    protected void ASPxGridView1_CustomGroupDisplayText(object sender, DevExpress.Web.ASPxGridViewColumnDisplayTextEventArgs e){
         if (e.Column.FieldName == "UnitPrice"){
             double d = Math.Floor(Convert.ToDouble(e.Value) / 10);
             string displayText = string.Format("{0:c} - {1:c} ", d * 10, (d + 1) * 10);

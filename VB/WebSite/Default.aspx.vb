@@ -16,15 +16,15 @@ Partial Public Class _Default
 
 	End Sub
 
-	Protected Sub ASPxGridView1_CustomColumnSort(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridView.CustomColumnSortEventArgs)
+	Protected Sub ASPxGridView1_CustomColumnSort(ByVal sender As Object, ByVal e As DevExpress.Web.CustomColumnSortEventArgs)
 		CompareColumnValues(e)
 	End Sub
 
-	Protected Sub ASPxGridView1_CustomColumnGroup(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridView.CustomColumnSortEventArgs)
+	Protected Sub ASPxGridView1_CustomColumnGroup(ByVal sender As Object, ByVal e As DevExpress.Web.CustomColumnSortEventArgs)
 		CompareColumnValues(e)
 	End Sub
 
-	Private Sub CompareColumnValues(ByVal e As DevExpress.Web.ASPxGridView.CustomColumnSortEventArgs)
+	Private Sub CompareColumnValues(ByVal e As DevExpress.Web.CustomColumnSortEventArgs)
 		If e.Column.FieldName = "UnitPrice" Then
 			Dim res As Integer = 0
 
@@ -45,7 +45,7 @@ Partial Public Class _Default
 		End If
 	End Sub
 
-	Protected Sub ASPxGridView1_CustomGroupDisplayText(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridView.ASPxGridViewColumnDisplayTextEventArgs)
+	Protected Sub ASPxGridView1_CustomGroupDisplayText(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridViewColumnDisplayTextEventArgs)
 		If e.Column.FieldName = "UnitPrice" Then
 			Dim d As Double = Math.Floor(Convert.ToDouble(e.Value) / 10)
 			Dim displayText As String = String.Format("{0:c} - {1:c} ", d * 10, (d + 1) * 10)
